@@ -45,7 +45,7 @@ export class StorageService {
             const result = JSON.parse(data);
 
             if (fs.existsSync(screenshotPath)) {
-              result.screenshotPath = `/screenshots/${jobId}.png`;
+              result.screenshotPath = `/screenshots/${jobId}`;
             } else {
               result.screenshotPath = null;
             }
