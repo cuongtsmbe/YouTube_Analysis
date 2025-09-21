@@ -1,10 +1,12 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { InjectQueue } from "@nestjs/bull";
 import { Queue } from "bull";
-import { StorageService } from "../storage/ storage.service";
+import { StorageService } from "../storage/storage.service";
 
 @Injectable()
 export class AnalyzeService {
+  private readonly logger = new Logger(AnalyzeService.name);
+
   constructor(
     @InjectQueue("analysis") private analysisQueue: Queue,
     private storageService: StorageService,
@@ -17,7 +19,7 @@ export class AnalyzeService {
       youtubeUrl,
       jobId,
     });
-    console.log(`Job ${jobId} added to the queue for URL: ${youtubeUrl}`);
+    this.logger.log(`Job ${jobId} added to the queue for URL: ${youtubeUrl}`);
 
     return { jobId };
   }

@@ -5,7 +5,7 @@ import * as puppeteer from "puppeteer";
 import { Cluster } from "puppeteer-cluster";
 import * as fs from "fs";
 import * as path from "path";
-import { StorageService } from "src/modules/storage/ storage.service";
+import { StorageService } from "src/modules/storage/storage.service";
 
 interface TwoCaptchaSolver {
   recaptcha(options: {
@@ -46,7 +46,7 @@ export class PuppeteerUtils {
         concurrency: Cluster.CONCURRENCY_CONTEXT,
         maxConcurrency: 2,
         puppeteerOptions: {
-          headless: false,
+          headless: true,
           args: [
             "--no-sandbox",
             "--disable-setuid-sandbox",

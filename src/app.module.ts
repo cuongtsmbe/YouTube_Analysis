@@ -4,6 +4,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import databaseConfig from "./config/database.config";
 import { BullModule } from "@nestjs/bull";
 import { AnalyzeModule } from "./modules/analyze/analyze.module";
+import { ScreenshotModule } from "./modules/image/screenshot.module";
 
 @Module({
   imports: [
@@ -24,11 +25,12 @@ import { AnalyzeModule } from "./modules/analyze/analyze.module";
 
     BullModule.forRoot({
       redis: {
-        host: process.env.REDIS_HOST || "localhost",
+        host: process.env.REDIS_HOST || "redis",
         port: parseInt(process.env.REDIS_PORT ?? "6379") || 6379,
       },
     }),
     AnalyzeModule,
+    ScreenshotModule,
   ],
   providers: [],
 })

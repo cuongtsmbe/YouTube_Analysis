@@ -4,24 +4,25 @@ import { Process, Processor } from "@nestjs/bull";
 import { Job } from "bull";
 import { PuppeteerUtils } from "src/shared/utils/puppeteer.utils";
 import { TranscriptionService } from "../transcription/transcription.service";
-import { StorageService } from "../storage/ storage.service";
+import { StorageService } from "../storage/storage.service";
 import { FfmpegUtils } from "src/shared/utils/ffmpeg.utils";
 import { Logger } from "@nestjs/common";
 
 @Processor("analysis")
 export class AnalyzeProcessor {
+  private readonly logger = new Logger(AnalyzeProcessor.name);
+
   constructor(
     private puppeteerUtils: PuppeteerUtils,
     private ffmpegUtils: FfmpegUtils,
     private transcriptionService: TranscriptionService,
     private storageService: StorageService,
-    private readonly logger = new Logger(AnalyzeProcessor.name),
   ) {}
 
   @Process("process")
   async handleAnalysis(job: Job) {
     const { youtubeUrl, jobId } = job.data;
-    console.log(`Starting analysis for job ${jobId} on URL: ${youtubeUrl}`);
+    this.logger.log(`Starting analysis for job ${jobId} on URL: ${youtubeUrl}`);
 
     try {
       this.logger.log(`Analyzing YouTube video: ${youtubeUrl}`);

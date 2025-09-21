@@ -5,7 +5,7 @@ import { AnalyzeService } from "./analyze.service";
 import { AnalyzeProcessor } from "./analyze.processor";
 import { TranscriptionService } from "../transcription/transcription.service";
 import { PuppeteerUtils } from "src/shared/utils/puppeteer.utils";
-import { StorageService } from "../storage/ storage.service";
+import { StorageService } from "../storage/storage.service";
 import { FfmpegUtils } from "src/shared/utils/ffmpeg.utils";
 
 @Module({
