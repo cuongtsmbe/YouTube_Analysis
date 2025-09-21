@@ -5,6 +5,11 @@
 /dist
 /build
 
+/audio
+/video
+/results
+/screenshots
+
 # Optional npm cache directory
 .npm
 
