@@ -17,7 +17,7 @@ It automates fetching a YouTube video, generating a thumbnail, extracting audio,
 - **Endpoints**:
   - `POST /analyze` → submit a job.
   - `GET /analyze/result/:jobId` → retrieve processed results (JSON transcript + metadata).
-  - `GET /screenshots/:jobId.png` → view the video thumbnail.
+  - `GET /screenshots/:jobId` → view the video thumbnail.
 - **Dockerized Deployment**: run with a single command on GCE VM or locally.
 
 ---
