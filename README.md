@@ -138,6 +138,8 @@ Requesst:
 http://localhost:8080/screenshots/f8ab0348-02c3-4b14-81e4-c26b463f1995
 ```
 
+### Video
+Link: https://drive.google.com/file/d/1MqtuuLeVjj55ePituIXBm4MjKGgOGSaB/view
 
 ## Why Use a Job Queue?
 
