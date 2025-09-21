@@ -107,7 +107,7 @@ export class PuppeteerUtils {
 
           await this.playVideo(page);
 
-          await new Promise((resolve) => setTimeout(resolve, 5000));
+          await new Promise((resolve) => setTimeout(resolve, 9000));
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           const screenshotPath = await this.takeScreenshot(page, jobId);
