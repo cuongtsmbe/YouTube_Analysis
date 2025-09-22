@@ -31,13 +31,6 @@ cd YouTube_Analysis
 ```
 ### 2. ENV
 ```
-    DATABASE_HOST=mysql
-    DATABASE_PORT=3306
-    DATABASE_USERNAME=root
-    DATABASE_PASSWORD=root
-    DATABASE_NAME=yt
-    MYSQL_ROOT_PASSWORD=root
-    MYSQL_DATABASE=yt
     PORT=8080
     PMA_HOST=mysql
     PMA_PORT=3306
