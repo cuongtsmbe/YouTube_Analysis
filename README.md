@@ -16,7 +16,7 @@ It automates fetching a YouTube video, generating a thumbnail, extracting audio,
 - **Job Queue**: processes requests asynchronously, returning a `jobId`.
 - **Endpoints**:
   - `POST /analyze` → submit a job.
-  - `GET /analyze/result/:jobId` → retrieve processed results (JSON transcript + metadata).
+  - `GET /result/:jobId` → retrieve processed results (JSON transcript + metadata).
   - `GET /screenshots/:jobId` → view the video thumbnail.
 - **Dockerized Deployment**: run with a single command on GCE VM or locally.
 
@@ -64,7 +64,7 @@ Response:
 #### Get Analysis Result
 Request: 
 ```
-curl http://localhost:8080/analyze/result/f8ab0348-02c3-4b14-81e4-c26b463f1995
+curl http://localhost:8080/result/f8ab0348-02c3-4b14-81e4-c26b463f1995
 
 ```
 Example Response:
