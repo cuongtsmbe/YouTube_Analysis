@@ -32,8 +32,6 @@ cd YouTube_Analysis
 ### 2. ENV
 ```
     PORT=8080
-    PMA_HOST=mysql
-    PMA_PORT=3306
     TWO_CAPTCHA_API_KEY=
     ELEVEN_LABS_API_KEY=sk_...
     GPT_ZERO_API_KEY=
